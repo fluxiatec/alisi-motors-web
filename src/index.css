@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-red: #ee1c1c;
+  --color-ink: #0a0a0a;
+  --color-wa: #25d366;
+  --font-display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  /* El wordmark ocupa ~88% del ancho en mobile; en desktop se limita. */
+  --wm-size: clamp(3.25rem, 17.4vw, 15rem);
+  color-scheme: dark;
+}
+
+html {
+  background: #000;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+::selection { background: var(--color-red); color: #fff; }
+
+:focus-visible { outline: 2px solid var(--color-red); outline-offset: 3px; }
+
+/* "Ventana" transparente entre secciones: deja ver el wordmark fijo. */
+.window { height: 50svh; pointer-events: none; }
+
+.section { position: relative; z-index: 10; background: #000; }
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.55);
+}
+
+.title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scrollcue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

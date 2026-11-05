@@ -1,0 +1,25 @@
+{
+  "stats": [
+    { "value": 400, "suffix": " HP", "label": "de potencia" },
+    { "value": 1050, "suffix": " kg", "label": "de peso" },
+    { "value": 5700, "prefix": "+", "label": "piezas" },
+    { "value": 85, "suffix": "%", "label": "de originalidad respecto del histórico" }
+  ],
+  "sheet": [
+    { "label": "Motor", "value": "V8 central" },
+    { "label": "Potencia", "value": "400 HP" },
+    { "label": "Peso", "value": "1.050 kg" },
+    { "label": "Piezas", "value": "Más de 5.700" },
+    { "label": "Originalidad", "value": "85% respecto del GT40 histórico" },
+    { "label": "Fabricación", "value": "100% artesanal en Córdoba" },
+    { "label": "Interior", "value": "Volante tapizado en cuero" },
+    { "label": "Certificación", "value": "Ensayos en Berta Experience y medición con VBOX junto a ACIARA" },
+    { "label": "Cilindrada / motor", "value": "", "pending": true },
+    { "label": "Caja", "value": "", "pending": true },
+    { "label": "Suspensión", "value": "", "pending": true },
+    { "label": "Frenos", "value": "", "pending": true },
+    { "label": "Llantas y neumáticos", "value": "", "pending": true },
+    { "label": "Dimensiones", "value": "", "pending": true },
+    { "label": "Velocidad máxima", "value": "", "pending": true }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "events": [
+    { "date": "2020", "text": "Nace el proyecto Alisi Motors." },
+    { "date": "2023", "text": "Ensayos del prototipo. Primera visita de Horacio Pagani a la fábrica." },
+    { "date": "2025", "text": "Primeras unidades entregadas. Test de certificación en Berta Experience." },
+    { "date": "Oct 2025", "text": "1° puesto categoría Revival, AutoClásica 2025." },
+    { "date": "Dic 2025", "text": "Segunda visita de Horacio Pagani." },
+    { "date": "Ene 2026", "text": "Séptima unidad de la serie." },
+    { "date": "Sep 2026", "text": "1° puesto categoría Recreación, Classic Park 2026." }
+  ],
+  "highlight": {
+    "value": "3.430 km",
+    "text": "por 3 países en 7 días, a bordo de un Miles GT40."
+  }
+}

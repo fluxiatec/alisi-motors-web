@@ -1,0 +1,8 @@
+node_modules/
+dist/
+raw/
+*.local
+.DS_Store
+Thumbs.db
+lighthouse-*.json
+lighthouse-*.html
