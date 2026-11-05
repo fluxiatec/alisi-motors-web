@@ -10,7 +10,7 @@ type Props = {
 };
 
 const styles = {
-  red: 'bg-red text-white active:bg-[#c51515]',
+  red: 'bg-cta text-white active:bg-[#b81414]',
   wa: 'bg-wa text-black active:bg-[#1fb457]',
   outline: 'border border-white/35 text-white active:bg-white/10',
 };

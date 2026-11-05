@@ -31,7 +31,7 @@ export function WhatsAppFab() {
       aria-label="Consultar por WhatsApp"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className={`fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red text-white shadow-[0_8px_30px_rgb(0_0_0/.5)] transition-[opacity,transform] duration-300 active:scale-95 ${
+      className={`fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-cta text-white shadow-[0_8px_30px_rgb(0_0_0/.5)] transition-[opacity,transform] duration-300 active:scale-95 ${
         visible ? 'opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
       }`}
       style={{ right: 'calc(env(safe-area-inset-right) + 1rem)', bottom: 'calc(env(safe-area-inset-bottom) + 1rem)' }}

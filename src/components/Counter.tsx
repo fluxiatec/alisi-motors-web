@@ -1,27 +1,47 @@
 import { useEffect, useRef } from 'react';
-import { animate, useInView } from 'motion/react';
 import { prefersReducedMotion } from '../hooks/usePrefs';
 
 const fmt = new Intl.NumberFormat('es-AR');
+const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
-/** Número que cuenta desde 0 al entrar en pantalla. Escribe directo en el DOM (sin re-render). */
-export function Counter({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) {
+/**
+ * Número que cuenta desde 0 al entrar en pantalla. rAF + IntersectionObserver, sin re-render.
+ * El valor final ya está en el HTML (sin JS / lectores de pantalla).
+ */
+export function Counter({ value, prefix = '', suffix = '', duration = 1600 }: { value: number; prefix?: string; suffix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '0px 0px -15% 0px' });
+  const final = `${prefix}${fmt.format(value)}${suffix}`;
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !inView) return;
+    if (!el || prefersReducedMotion()) return;
+    let raf = 0;
     const write = (v: number) => (el.textContent = `${prefix}${fmt.format(Math.round(v))}${suffix}`);
-    if (prefersReducedMotion()) return void write(value);
-    const c = animate(0, value, { duration: 1.6, ease: [0.16, 1, 0.3, 1], onUpdate: write });
-    return () => c.stop();
-  }, [inView, value, prefix, suffix]);
+    write(0);
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now();
+        const tick = (now: number) => {
+          const t = Math.min((now - t0) / duration, 1);
+          write(value * easeOutExpo(t));
+          if (t < 1) raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      },
+      { rootMargin: '0px 0px -15% 0px' },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [value, prefix, suffix, duration]);
 
-  // El valor final queda en el HTML inicial (SEO / sin JS) y se reemplaza al animar.
   return (
-    <span ref={ref} className="tabular-nums">
-      {`${prefix}${fmt.format(value)}${suffix}`}
+    <span ref={ref} className="tabular-nums" aria-label={final}>
+      {final}
     </span>
   );
 }

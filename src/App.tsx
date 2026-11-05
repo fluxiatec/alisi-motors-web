@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { LazyMotion, domAnimation } from 'motion/react';
-import { Wordmark } from './components/Wordmark';
+import { useWordmark } from './components/Wordmark';
 import { ToastProvider } from './components/Toast';
 import { WhatsAppFab } from './components/WhatsAppFab';
 import { Hero } from './sections/Hero';
@@ -24,12 +24,12 @@ export function App() {
   const [introDone, setIntroDone] = useState(false);
   const onIntroDone = useCallback(() => setIntroDone(true), []);
 
+  useWordmark(onIntroDone);
   useEffect(() => initLenis(), []);
 
   return (
     <LazyMotion features={domAnimation} strict>
       <ToastProvider>
-        <Wordmark onIntroDone={onIntroDone} />
         <main>
           <Hero introDone={introDone} />
           <div className="window" />

@@ -24,8 +24,45 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- LCP: poster del hero -->
-    <link rel="preload" as="image" href="/media/video/hero-poster.webp" type="image/webp" fetchpriority="high" />
+    <!-- Poster del hero: se ve apenas se abre la cortina de la intro. -->
+    <link rel="preload" as="image" href="/media/video/hero-poster.webp" type="image/webp" />
+
+    <!-- CSS crítico inline: el wordmark se pinta y anima sin esperar al JS ni al CSS principal. -->
+    <style>
+      @font-face {
+        font-family: 'Anton';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/fonts/anton-latin-400.woff2) format('woff2');
+      }
+      /* Subset de Anton solo con A L I S M O T R (lo genera scripts/subset-wordmark.mjs): el wordmark pinta con su fuente en el primer frame. */
+      @font-face {
+        font-family: 'Anton Wordmark';
+        font-display: block;
+        src: /*WM-FONT*/url(data:font/woff2;base64,d09GMgABAAAAAAPwAA4AAAAABxgAAAOdAAIdsgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgRQcKgZgAFQRCAqDeIMmATYCJAMkCxQABCAFg0oHIBu9BRGVm+shvkow5hBrB/vBsLk2XA3t4DDSxy5iO0Ix4pF0+r/TfRBlHf89SRZ8H9bRRt0Bm4d/7t19///G1qVRRB0PNJFAIunECc/B0/M1z/3ymk4Pq4IqVvW7gWbt43GBb7o3Gnj73OA8xNzSKNMEljcfZXCzMDGPYnsAzP/l9MYCPZzPT/TsgGeAY27gdFsvwIAS7lNr2FFD25T2EjnL5tp4GOsFAzhErdZNECAEABSC4CII4JNNEap8xer1ibu36d+TGAPwy2jp1qFvT1wQGoNiFD5ZLhliACEJQdAI7v9nIB0DZJOPQgP8fxGNoDDXSS5GpeKitiXPIReZyqcHYPQqCTmwipqz6Jjl+pXYBtPxAEEA3pWew0H9OaCtfqnL3wMExdUiIADWHfsBOjLRgAI0kIxGgGQMpUGIi8JQRhU11FL//08Crg7V/Vpfe+6pB7EVTv6nYaUHQBIQANPhKh0A5mX5HtOmrjF2FAfJ3HxuMCxhSNjUb9wqGOqHyWiISUYKcN7beYPDoW6bqe/ijLkeTLuKZfSVptPihO8rcLXQnqauEqjvTDOF1phzvj0smCbaVMa8hpaIugnTDsuYa9caNrymb5O/qUK3sa/sPWixToOLHY5yDYb5OrHyh2Twlz1o4A98MEqV9s3WSeTuTDcqESXZD+qbBOPR1BprS9d8kShVqXxhr1hh+6Zlv1gnX2q19l/+dN+Nw71/797t4+XVqyb/qPxHAW+6tWfvjh03nrBTN2fF2R+Tbnw+KnDn9qK/+ixT3URlx8KzdjeOngyykm3QoMp86H9szvv9ePy01zS/U+/2ChQalq6TsXvNthXKzL2dTS8PL7w+9mmudzoOyTbJGyGzZw+ulr8cOtlhdP1e+/HU1D1lnnmxrqp70b02AARQ6Te93tieOEwo/rXYcAG43Z4O3Jk1a763X6CyNiBgowAQ+LT81wuoDzuCQLfx9D/j9BGOuEAjLUDN3I+UxU9opRcYpxvppXlIRgCPxhxas2iTwtAyh6Y0YjxgHaEg+KwTFDE7BE0hxwRDGt8Ei4qRyJxNmmhodSlaYREI5l2ZlCm4lkkY2L9N8hTpmrIUCpzyMCyYhSmWc4Vgnqe5SjIJIUUg4SRxShEAiKIgHADbj/NccrnIAIgkmgyG4X+cA5CAH7OZRDpdqJKAxFcnDIuzD5RyldbAUSJIQV/zpOtoJfD40AGKOYTkf1dMJ0qJbHjxlFGVfkAA) format('woff2');
+      }
+      html { background: #000; }
+      .wm { position: fixed; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; user-select: none; }
+      .wm__in { position: relative; }
+      .wm__word {
+        margin: 0;
+        font: 400 clamp(3.25rem, 17.4vw, 15rem) / 1 'Anton Wordmark', Anton, Impact, 'Arial Narrow', sans-serif;
+        color: #ee1c1c;
+        white-space: nowrap;
+        animation: wm-in 1.6s cubic-bezier(.2, .7, .2, 1) both;
+      }
+      .wm__tag {
+        position: absolute; left: 0; right: 0; top: 100%; margin: .5rem 0 0;
+        font: 500 .8rem/1.4 system-ui, sans-serif; letter-spacing: .42em; text-transform: uppercase; text-align: center; color: #fff;
+        animation: wm-fade 1s ease-out .7s both;
+      }
+      /* .01 y no 0: el texto cuenta como pintado desde el primer frame (LCP), visualmente es negro. */
+      @keyframes wm-in { from { opacity: .01; letter-spacing: .03em; } to { opacity: 1; letter-spacing: 0; } }
+      @keyframes wm-fade { from { opacity: 0; } to { opacity: 1; } }
+      @media (min-width: 640px) { .wm__tag { font-size: .875rem; } }
+      @media (prefers-reduced-motion: reduce) { .wm__word, .wm__tag { animation: none; } }
+    </style>
 
     <script type="application/ld+json">
       {
@@ -41,6 +78,14 @@
     </script>
   </head>
   <body>
+    <!-- Wordmark fijo (z-0), en HTML estático para que sea el primer paint (LCP).
+         React solo maneja el fade del "Art & Speed" con el scroll (src/components/Wordmark.tsx). -->
+    <div class="wm" aria-hidden="true">
+      <div class="wm__in">
+        <p class="wm__word">ALISIMOTORS</p>
+        <p class="wm__tag" id="wm-tag">Art &amp; Speed</p>
+      </div>
+    </div>
     <div id="root"></div>
     <noscript><p style="color:#fff;padding:2rem;font-family:sans-serif">Alisi Motors · Miles GT40 · <a style="color:#EE1C1C" href="https://wa.me/5493541682070">WhatsApp</a> · info@alisimotors.com</p></noscript>
     <script type="module" src="/src/main.tsx"></script>

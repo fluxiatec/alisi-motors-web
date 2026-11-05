@@ -14,7 +14,7 @@ function Row({ href, icon, label, value, copy, primary }: { href: string; icon: 
         href={href}
         {...(external ? { target: '_blank', rel: 'noopener' } : {})}
         className={`flex min-h-[64px] flex-1 items-center gap-4 rounded-2xl px-5 transition-colors ${
-          primary ? 'bg-red text-white active:bg-[#c51515]' : 'bg-white/[0.07] text-white active:bg-white/15'
+          primary ? 'bg-cta text-white active:bg-[#b81414]' : 'bg-white/[0.07] text-white active:bg-white/15'
         }`}
       >
         <span className="shrink-0">{icon}</span>

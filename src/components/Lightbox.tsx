@@ -173,7 +173,7 @@ export default function Lightbox({ unit, onClose }: Props) {
         <CTA href={waLink(0, unit)} className="w-full max-w-sm">
           Consultar por esta unidad
         </CTA>
-        <p className="text-[0.7rem] text-white/40">{unit.credit ? `Foto: ${unit.credit}` : 'Deslizá hacia abajo para cerrar'}</p>
+        <p className="text-[0.7rem] text-white/55">{unit.credit ? `Foto: ${unit.credit}` : 'Deslizá hacia abajo para cerrar'}</p>
       </div>
     </div>,
     document.body,

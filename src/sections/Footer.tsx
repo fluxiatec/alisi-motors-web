@@ -15,7 +15,7 @@ export function Footer() {
           {contact.email}
         </a>
       </nav>
-      <p className="mt-6 text-xs text-white/40">© {new Date().getFullYear()} Alisi Motors · Malagueño, Córdoba, Argentina</p>
+      <p className="mt-6 text-xs text-white/55">© {new Date().getFullYear()} Alisi Motors · Malagueño, Córdoba, Argentina</p>
     </footer>
   );
 }
