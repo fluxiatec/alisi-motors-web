@@ -1,6 +1,4 @@
 import { SmartVideo } from '../components/SmartVideo';
-import { CTA } from '../components/CTA';
-import { waLink } from '../lib/contact';
 
 /**
  * Hero: el video va en z-[-1] (por debajo del wordmark fijo en z-0).
@@ -26,9 +24,6 @@ export function Hero({ introDone }: { introDone: boolean }) {
         }`}
         style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 1.75rem)' }}
       >
-        <CTA href={waLink(0)} className="w-full max-w-xs">
-          Consultá por tu unidad
-        </CTA>
         <a href="#solo-24" className="flex min-h-11 min-w-11 flex-col items-center justify-center text-white/60" aria-label="Bajar">
           <span className="block h-9 w-px origin-top animate-[scrollcue_2.2s_ease-in-out_infinite] bg-white/70" />
         </a>
