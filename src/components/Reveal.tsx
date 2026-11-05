@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { m } from 'motion/react';
 
-type Props = { children: ReactNode; delay?: number; y?: number; className?: string; as?: 'div' | 'p' | 'h2' | 'li' };
+type Props = { children: ReactNode; delay?: number; y?: number; className?: string; as?: 'div' | 'p' | 'h2' | 'h3' | 'li' };
 
 /** Fade + slide al entrar en viewport. Solo anima transform y opacity. */
 export function Reveal({ children, delay = 0, y = 28, className, as = 'div' }: Props) {

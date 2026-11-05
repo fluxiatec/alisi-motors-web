@@ -6,6 +6,7 @@ import { Hero } from './sections/Hero';
 import { Only24 } from './sections/Only24';
 import { Manifesto } from './sections/Manifesto';
 import { Units } from './sections/Units';
+import { Engineering } from './sections/Engineering';
 import { initLenis } from './lib/lenis';
 
 export function App() {
@@ -26,6 +27,7 @@ export function App() {
           <div className="window" />
           <Units />
           <div className="window" />
+          <Engineering />
           <div className="section h-[150svh]" />
         </main>
       </ToastProvider>
