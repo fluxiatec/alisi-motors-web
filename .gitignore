@@ -6,3 +6,4 @@ raw/
 Thumbs.db
 lighthouse-*.json
 lighthouse-*.html
+*.tsbuildinfo

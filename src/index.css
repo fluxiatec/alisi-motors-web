@@ -20,8 +20,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Sin background en body: si no, tapa la capa z-[-1] del video del hero. */
 body {
-  background: #000;
   color: #fff;
   font-family: var(--font-sans);
   overflow-x: clip;
