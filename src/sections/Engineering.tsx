@@ -7,7 +7,9 @@ import { Parallax } from '../components/Parallax';
 type Stat = { value: number; prefix?: string; suffix?: string; label: string };
 
 export function Engineering() {
-  const [shifter, brake, engine] = units.details;
+  // El motor va grande con parallax; el resto arma la grilla de detalles en el orden de units.json.
+  const engine = units.details.find((d) => d.file === 'IMG_6842')!;
+  const grid = units.details.filter((d) => d !== engine);
 
   return (
     <section id="engineering" className="section pt-24 pb-20">
@@ -33,7 +35,7 @@ export function Engineering() {
       </dl>
 
       <div className="grid grid-cols-2 gap-1.5 px-1.5">
-        {[shifter, brake].map((d) => (
+        {grid.map((d) => (
           <Parallax key={d.id} photo={d} sizes="50vw" strength={6} className="aspect-[3/4]" />
         ))}
       </div>

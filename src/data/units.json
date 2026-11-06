@@ -379,6 +379,62 @@
         2400
       ],
       "placeholder": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAgCdASoQABgAA4BaJZwAAu1yBMZaiYV6z7n0QAD+9XBAkXoaOb0S1nUCQ5/gTQskxJwojAmTo/Fd0beJISzRcVokGz/7sq4CAAAA"
+    },
+    {
+      "file": "DET_COCKPIT",
+      "alt": "Miles GT40 cockpit and dashboard",
+      "id": "det-cockpit",
+      "width": 6720,
+      "height": 4480,
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "placeholder": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoQAAsAA4BaJaQAAp/ZVdMTQAD+8w+VRbMKqwQkrZMYAAAA"
+    },
+    {
+      "file": "DET_WHEEL",
+      "alt": "Miles GT40 leather steering wheel",
+      "id": "det-wheel",
+      "width": 6720,
+      "height": 4480,
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "placeholder": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAQCdASoQAAsAA4BaJaQAAudgc2EaWgAA/vhpUY7FzulLdfE1N7bInFV7QAAA"
+    },
+    {
+      "file": "DET_SUSPENSION",
+      "alt": "Miles GT40 front suspension and brake",
+      "id": "det-suspension",
+      "width": 6720,
+      "height": 4480,
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "placeholder": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAgCdASoQAAsAA4BaJZQCdAERHsU5q8skAAD8MYItpzEHLY3DkUzv0Jy6QJKMEx2fgsQAAAA="
+    },
+    {
+      "file": "DET_SEATS",
+      "alt": "Miles GT40 leather seats and harnesses",
+      "id": "det-seats",
+      "width": 6720,
+      "height": 4480,
+      "widths": [
+        480,
+        960,
+        1600,
+        2400
+      ],
+      "placeholder": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAQCdASoQAAsAA4BaJaQAAqH8LWZYAP7s5D8mhHYR0hjkUAAAAA=="
     }
   ]
 }
