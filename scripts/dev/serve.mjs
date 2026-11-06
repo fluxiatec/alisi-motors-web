@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // Servidor estático para medir dist/ como en producción (≈ deploy/nginx.conf):
-// brotli/gzip en texto, Cache-Control, Range requests para video. Uso: node scripts/dev/serve.mjs [puerto]
+// brotli/gzip en texto, Cache-Control, Range requests para video. Uso: node scripts/dev/serve.mjs [puerto] [carpeta]
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 
-const ROOT = path.resolve('dist');
+const ROOT = path.resolve(process.argv[3] ?? 'dist');
 const PORT = +(process.argv[2] ?? 4180);
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json',
@@ -20,7 +20,8 @@ const cache = new Map();
 http.createServer((req, res) => {
   let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   let file = path.join(ROOT, p);
-  if (!file.startsWith(ROOT) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) file = path.join(ROOT, 'index.html');
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+  if (!file.startsWith(ROOT) || !fs.existsSync(file)) file = path.join(ROOT, 'index.html');
   const ext = path.extname(file);
   const headers = { 'Content-Type': TYPES[ext] ?? 'application/octet-stream' };
   headers['Cache-Control'] = p.startsWith('/assets/') ? 'public, max-age=31536000, immutable' : p.startsWith('/media/') ? 'public, max-age=2592000' : 'no-cache';

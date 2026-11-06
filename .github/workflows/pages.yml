@@ -1,5 +1,5 @@
 # Alternativa a nginx: GitHub Pages. Settings → Pages → Source: GitHub Actions.
-# Con dominio propio (alisimotors.com) dejar BASE_PATH="/". Sin dominio: BASE_PATH="/<repo>/".
+# Publica en https://<usuario>.github.io/<repo>/. Con dominio propio: BASE_PATH="/" y VITE_SITE_URL="https://alisimotors.com/".
 name: Deploy a GitHub Pages
 on:
   push:
@@ -27,7 +27,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          BASE_PATH: /
+          BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

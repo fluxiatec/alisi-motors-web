@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { Reveal } from '../components/Reveal';
-import { CTA } from '../components/CTA';
 import { useToast } from '../components/Toast';
 import { CopyIcon, InstagramIcon, MailIcon, WhatsAppIcon } from '../components/icons';
 import { contact, mailLink, waLink } from '../lib/contact';
@@ -65,13 +64,6 @@ export function Contact() {
           <InstagramIcon className="h-6 w-6" />
           {contact.instagram.handle}
         </a>
-      </Reveal>
-
-      {/* CTA principal, al cierre de la página (antes estaba en el hero). */}
-      <Reveal delay={0.2} className="mx-auto mt-12 flex max-w-md justify-center">
-        <CTA href={waLink(0)} className="w-full">
-          Consultá por tu unidad
-        </CTA>
       </Reveal>
     </section>
   );

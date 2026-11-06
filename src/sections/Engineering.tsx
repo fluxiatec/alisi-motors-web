@@ -3,8 +3,6 @@ import specs from '../data/specs.json';
 import { Reveal } from '../components/Reveal';
 import { Counter } from '../components/Counter';
 import { Parallax } from '../components/Parallax';
-import { InlineCTA } from '../components/CTA';
-import { waLink } from '../lib/contact';
 
 type Stat = { value: number; prefix?: string; suffix?: string; label: string };
 
@@ -63,7 +61,7 @@ export function Engineering() {
         </dl>
       </div>
 
-      <InlineCTA href={waLink(0)} title="Una experiencia de propiedad única" label="Consultá por tu unidad" />
+      <div className="h-20" />
     </section>
   );
 }
