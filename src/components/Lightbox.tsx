@@ -94,16 +94,12 @@ export default function Lightbox({ unit, onClose }: Props) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Fotos del Miles GT40 ${unit.color}`}
+      aria-label="Miles GT40 photos"
       className="fixed inset-0 z-[60] flex flex-col"
       style={{ backgroundColor: `rgb(0 0 0 / ${closing ? 0 : 1 - progress * 0.7})`, transition: 'background-color .2s' }}
     >
       <div className="flex items-center justify-between gap-3 pr-2 pl-5" style={{ paddingTop: 'calc(env(safe-area-inset-top) + 0.5rem)', ...chrome }}>
         <p className="flex items-baseline gap-3 text-sm text-white/70">
-          <span className="font-display text-lg tracking-wide text-white uppercase">
-            {unit.color}
-            {unit.raceNumber && <span className="text-red"> #{unit.raceNumber}</span>}
-          </span>
           <span className="tabular-nums">
             {index + 1} / {unit.photos.length}
           </span>
@@ -113,7 +109,7 @@ export default function Lightbox({ unit, onClose }: Props) {
           type="button"
           onClick={requestClose}
           className="flex h-12 w-12 items-center justify-center rounded-full text-white active:bg-white/10"
-          aria-label="Cerrar"
+          aria-label="Close"
         >
           <CloseIcon />
         </button>
@@ -146,7 +142,7 @@ export default function Lightbox({ unit, onClose }: Props) {
               type="button"
               onClick={() => embla?.scrollPrev()}
               className="absolute top-1/2 left-3 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white md:flex"
-              aria-label="Foto anterior"
+              aria-label="Previous photo"
             >
               <ArrowIcon dir="left" className="h-5 w-5" />
             </button>
@@ -154,7 +150,7 @@ export default function Lightbox({ unit, onClose }: Props) {
               type="button"
               onClick={() => embla?.scrollNext()}
               className="absolute top-1/2 right-3 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white md:flex"
-              aria-label="Foto siguiente"
+              aria-label="Next photo"
             >
               <ArrowIcon className="h-5 w-5" />
             </button>
@@ -170,10 +166,10 @@ export default function Lightbox({ unit, onClose }: Props) {
             </span>
           ))}
         </div>
-        <CTA href={waLink(0, unit)} className="w-full max-w-sm">
-          Consultar por esta unidad
+        <CTA href={waLink(0)} className="w-full max-w-sm">
+          Ask about this car
         </CTA>
-        <p className="text-[0.7rem] text-white/55">{unit.credit ? `Foto: ${unit.credit}` : 'Deslizá hacia abajo para cerrar'}</p>
+        <p className="text-[0.7rem] text-white/55">{unit.credit ? `Photo: ${unit.credit}` : 'Swipe down to close'}</p>
       </div>
     </div>,
     document.body,

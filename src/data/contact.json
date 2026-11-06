@@ -1,11 +1,21 @@
 {
   "email": "info@alisimotors.com",
-  "emailSubject": "Consulta Miles GT40",
+  "emailSubject": "Miles GT40 inquiry",
   "whatsapp": [
-    { "label": "WhatsApp 1", "display": "+54 9 3541 68 2070", "number": "5493541682070" },
-    { "label": "WhatsApp 2", "display": "+54 9 3541 61 8268", "number": "5493541618268" }
+    {
+      "label": "WhatsApp 1",
+      "display": "+54 9 3541 68 2070",
+      "number": "5493541682070"
+    },
+    {
+      "label": "WhatsApp 2",
+      "display": "+54 9 3541 61 8268",
+      "number": "5493541618268"
+    }
   ],
-  "instagram": { "handle": "@alisimotors", "url": "https://instagram.com/alisimotors" },
-  "message": "Hola Alisi Motors, vi la web y quiero consultar por el Miles GT40.",
-  "unitMessage": "Hola Alisi Motors, vi la web y quiero consultar por el Miles GT40 {unit}."
+  "instagram": {
+    "handle": "@alisimotors",
+    "url": "https://instagram.com/alisimotors"
+  },
+  "message": "Hi Alisi Motors, I saw your website and I'd like to know more about the Miles GT40."
 }

@@ -128,12 +128,12 @@ export function SmartVideo({ name, hero, label, className = '' }: Props) {
           type="button"
           onClick={() => setAllowed(true)}
           className={`absolute left-1/2 z-20 flex min-h-11 -translate-x-1/2 items-center ${hero ? 'top-[calc(env(safe-area-inset-top)+1.25rem)]' : 'top-1/3'} gap-2 rounded-full border border-white/40 bg-black/50 px-5 text-sm tracking-wide text-white backdrop-blur`}
-          aria-label={`Reproducir video: ${label}`}
+          aria-label={`Play video: ${label}`}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
             <path d="M2 1l11 6-11 6z" fill="currentColor" />
           </svg>
-          Ver video
+          Play video
         </button>
       )}
     </div>

@@ -6,9 +6,9 @@ import { SmartVideo } from '../components/SmartVideo';
  */
 export function Hero({ introDone }: { introDone: boolean }) {
   return (
-    <header id="inicio" className="relative h-svh">
+    <header id="top" className="relative h-svh">
       <div className="absolute inset-0 z-[-1]">
-        <SmartVideo name="hero" hero label="Miles GT40 verde #77 saliendo del taller" className="h-full w-full" />
+        <SmartVideo name="hero" hero label="Green Miles GT40 #77 rolling out of the workshop" className="h-full w-full" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(0_0_0/.55)_0%,rgb(0_0_0/.35)_40%,rgb(0_0_0/.45)_60%,rgb(0_0_0/.85)_100%)]" />
         {/* Cortina negra de la intro: tapa el poster hasta que aparece el wordmark. */}
         <div
@@ -24,7 +24,7 @@ export function Hero({ introDone }: { introDone: boolean }) {
         }`}
         style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 1.75rem)' }}
       >
-        <a href="#solo-24" className="flex min-h-11 min-w-11 flex-col items-center justify-center text-white/60" aria-label="Bajar">
+        <a href="#manifesto" className="flex min-h-11 min-w-11 flex-col items-center justify-center text-white/60" aria-label="Scroll down">
           <span className="block h-9 w-px origin-top animate-[scrollcue_2.2s_ease-in-out_infinite] bg-white/70" />
         </a>
       </div>

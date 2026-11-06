@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { prefersReducedMotion } from '../hooks/usePrefs';
 
-const fmt = new Intl.NumberFormat('es-AR');
+const fmt = new Intl.NumberFormat('en-US');
 const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
 /**

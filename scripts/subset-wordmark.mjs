@@ -6,7 +6,7 @@ import fs from 'node:fs';
 
 const SRC = 'public/fonts/anton-latin-400.woff2';
 const OUT = 'public/fonts/anton-wordmark.woff2';
-execFileSync('python', ['-m', 'fontTools.subset', SRC, '--text=ALISIMOTORS', '--flavor=woff2', `--output-file=${OUT}`,
+execFileSync('python', ['-m', 'fontTools.subset', SRC, '--text=ALISI MOTORS', '--flavor=woff2', `--output-file=${OUT}`,
   '--layout-features=kern', '--no-hinting', '--desubroutinize'], { stdio: 'inherit' });
 
 const b64 = fs.readFileSync(OUT).toString('base64');

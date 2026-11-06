@@ -31,10 +31,10 @@ export function CTA({ href, children, variant = 'red', className = '', icon = <W
 }
 
 /** CTA intermedio entre secciones. */
-export function InlineCTA({ href, title, label }: { href: string; title: string; label: string }) {
+export function InlineCTA({ href, title, label }: { href: string; title?: string; label: string }) {
   return (
     <div className="flex flex-col items-center gap-5 px-6 py-14 text-center">
-      <p className="title text-3xl sm:text-4xl">{title}</p>
+      {title && <p className="title text-3xl sm:text-4xl">{title}</p>}
       <CTA href={href}>{label}</CTA>
     </div>
   );

@@ -25,12 +25,12 @@ function Row({ href, icon, label, value, copy, primary }: { href: string; icon: 
       </a>
       <button
         type="button"
-        onClick={async () => toast((await copyText(copy)) ? 'Copiado ✓' : 'No se pudo copiar')}
+        onClick={async () => toast((await copyText(copy)) ? 'Copied ✓' : 'Could not copy')}
         className="flex min-h-[64px] w-16 shrink-0 flex-col items-center justify-center gap-1 rounded-2xl bg-white/[0.07] text-[0.65rem] tracking-wide text-white/70 active:bg-white/15"
-        aria-label={`Copiar ${value}`}
+        aria-label={`Copy ${value}`}
       >
         <CopyIcon />
-        Copiar
+        Copy
       </button>
     </div>
   );
@@ -39,15 +39,11 @@ function Row({ href, icon, label, value, copy, primary }: { href: string; icon: 
 export function Contact() {
   const [wa1, wa2] = contact.whatsapp;
   return (
-    <section id="contacto" className="section px-5 pt-24 pb-20">
+    <section id="contact" className="section px-5 pt-24 pb-20">
       <div className="text-center">
-        <Reveal as="h2" className="title text-[clamp(2.5rem,12.2vw,7rem)]">
-          Sólo existen 24.
-          <br />
-          <span className="text-red">Reservá la tuya.</span>
-        </Reveal>
-        <Reveal as="p" delay={0.1} className="mx-auto mt-6 max-w-sm text-base text-white/70">
-          Escribinos y te contamos todo sobre el Miles GT40: disponibilidad, personalización y entrega.
+        <h2 className="sr-only">Contact</h2>
+        <Reveal as="p" className="mx-auto max-w-sm text-lg text-white/80">
+          Write to us and we'll tell you all about the Miles GT40: availability, customization and delivery.
         </Reveal>
       </div>
 

@@ -28,7 +28,7 @@ npm run report            # tabla de pesos antes/después
 ## Performance (primer pantallazo)
 
 - El wordmark está en `index.html` (HTML + CSS crítico inline), no en React: es el LCP y pinta sin esperar al JS.
-- Usa un subset de Anton con solo las letras de ALISIMOTORS (~1 KB) embebido en base64. Si cambia el texto del wordmark: `npm run subset:wordmark` (requiere Python + `pip install fonttools brotli`).
+- Usa un subset de Anton con solo las letras de ALISIMOTORS (~1 KB) embebido en base64. Si cambia el texto del logo: `npm run subset:wordmark` (requiere Python + `pip install fonttools brotli`).
 - El CSS del bundle se inserta inline en el HTML (plugin `inlineCss` en `vite.config.ts`): cero recursos que bloqueen el render.
 - Los videos no usan el atributo `autoplay` (anula `preload="none"`); se reproducen con IntersectionObserver y el negro mate recién se pide cerca del viewport.
 - Para medir como en producción (brotli + caché + Range): `npm run build && npm run serve:dist` y Lighthouse contra http://localhost:4180.
@@ -38,9 +38,8 @@ npm run report            # tabla de pesos antes/después
 | Archivo | Qué contiene |
 |---|---|
 | `units.json` | Unidades: color, número de carrera, `unidad` ("07/24", vacío = no se muestra), fotos, `credit` |
-| `specs.json` | Cifras animadas y ficha técnica. Los ítems con `"pending": true` no se muestran: completar `value` y borrar el flag |
-| `timeline.json` | Hitos de la trayectoria + dato destacado |
-| `contact.json` | Mail, WhatsApp, Instagram y mensajes precargados (`{unit}` se reemplaza por "verde #77", etc.) |
+| `specs.json` | Cifras animadas de Ingeniería |
+| `contact.json` | Mail, WhatsApp, Instagram y mensaje precargado de WhatsApp (único, en inglés) |
 | `site.json` | `showPartners` (false hasta que el cliente apruebe) y lista de partners |
 
 ## Capas del wordmark

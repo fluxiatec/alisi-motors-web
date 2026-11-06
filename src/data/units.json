@@ -14,7 +14,7 @@
       "photos": [
         {
           "file": "IMG_6862",
-          "alt": "Miles GT40 celeste y naranja #6, vista tres cuartos",
+          "alt": "Light blue and orange Miles GT40",
           "id": "img-6862",
           "width": 6596,
           "height": 4397,
@@ -28,7 +28,7 @@
         },
         {
           "file": "IMG_6860",
-          "alt": "Miles GT40 celeste y naranja #6, perfil",
+          "alt": "Light blue and orange Miles GT40, view 2",
           "id": "img-6860",
           "width": 6961,
           "height": 4641,
@@ -42,7 +42,7 @@
         },
         {
           "file": "IMG_2584",
-          "alt": "Miles GT40 celeste y naranja #6, vista vertical",
+          "alt": "Light blue and orange Miles GT40, view 3",
           "id": "img-2584",
           "width": 4840,
           "height": 6720,
@@ -56,7 +56,7 @@
         },
         {
           "file": "IMG_6859",
-          "alt": "Miles GT40 celeste y naranja #6, detalle",
+          "alt": "Light blue and orange Miles GT40, view 4",
           "id": "img-6859",
           "width": 4767,
           "height": 3178,
@@ -84,7 +84,7 @@
       "photos": [
         {
           "file": "IMG_6846",
-          "alt": "Miles GT40 verde #77",
+          "alt": "Green Miles GT40",
           "id": "img-6846",
           "width": 8192,
           "height": 5464,
@@ -98,7 +98,7 @@
         },
         {
           "file": "IMG_6843",
-          "alt": "Miles GT40 verde #77, otra vista",
+          "alt": "Green Miles GT40, view 2",
           "id": "img-6843",
           "width": 8059,
           "height": 5375,
@@ -112,7 +112,7 @@
         },
         {
           "file": "IMG_6845",
-          "alt": "Miles GT40 verde #77, lateral",
+          "alt": "Green Miles GT40, view 3",
           "id": "img-6845",
           "width": 8339,
           "height": 5562,
@@ -126,7 +126,7 @@
         },
         {
           "file": "IMG_6844",
-          "alt": "Miles GT40 verde #77, detalle",
+          "alt": "Green Miles GT40, view 4",
           "id": "img-6844",
           "width": 6791,
           "height": 4620,
@@ -140,7 +140,7 @@
         },
         {
           "file": "IMG_6842",
-          "alt": "Motor V8 central del Miles GT40",
+          "alt": "Miles GT40 mid-mounted V8 engine",
           "id": "img-6842",
           "width": 5318,
           "height": 7973,
@@ -168,7 +168,7 @@
       "photos": [
         {
           "file": "IMG_6848",
-          "alt": "Miles GT40 amarillo",
+          "alt": "Yellow Miles GT40",
           "id": "img-6848",
           "width": 6720,
           "height": 4480,
@@ -182,7 +182,7 @@
         },
         {
           "file": "IMG_6849",
-          "alt": "Miles GT40 amarillo, otra vista",
+          "alt": "Yellow Miles GT40, view 2",
           "id": "img-6849",
           "width": 6720,
           "height": 4480,
@@ -196,7 +196,7 @@
         },
         {
           "file": "IMG_6847",
-          "alt": "Interior del Miles GT40 amarillo",
+          "alt": "Miles GT40 interior",
           "id": "img-6847",
           "width": 6720,
           "height": 4480,
@@ -210,7 +210,7 @@
         },
         {
           "file": "IMG_2852",
-          "alt": "Tablero del Miles GT40",
+          "alt": "Miles GT40 dashboard",
           "id": "img-2852",
           "width": 6720,
           "height": 4480,
@@ -238,7 +238,7 @@
       "photos": [
         {
           "file": "IMG_3405",
-          "alt": "Miles GT40 dorado #5",
+          "alt": "Gold Miles GT40",
           "id": "img-3405",
           "width": 7703,
           "height": 5138,
@@ -252,7 +252,7 @@
         },
         {
           "file": "IMG_3401",
-          "alt": "Miles GT40 dorado #5, otra vista",
+          "alt": "Gold Miles GT40, view 2",
           "id": "img-3401",
           "width": 8666,
           "height": 5780,
@@ -266,7 +266,7 @@
         },
         {
           "file": "IMG_2851",
-          "alt": "Miles GT40 dorado #5, lateral",
+          "alt": "Gold Miles GT40, view 3",
           "id": "img-2851",
           "width": 6932,
           "height": 4621,
@@ -280,7 +280,7 @@
         },
         {
           "file": "IMG_3404",
-          "alt": "Miles GT40 dorado #5, detalle",
+          "alt": "Gold Miles GT40, view 4",
           "id": "img-3404",
           "width": 6720,
           "height": 4480,
@@ -308,7 +308,7 @@
       "photos": [
         {
           "file": "IMG_6858",
-          "alt": "Miles GT40 rojo #8",
+          "alt": "Red Miles GT40",
           "id": "img-6858",
           "width": 7954,
           "height": 5305,
@@ -322,7 +322,7 @@
         },
         {
           "file": "IMG_6857",
-          "alt": "Miles GT40 rojo #8, otra vista",
+          "alt": "Red Miles GT40, view 2",
           "id": "img-6857",
           "width": 4176,
           "height": 2784,
@@ -340,8 +340,7 @@
   "details": [
     {
       "file": "IMG_2676",
-      "alt": "Palanca de cambios",
-      "caption": "Palanca de cambios",
+      "alt": "Miles GT40 gear shifter",
       "id": "img-2676",
       "width": 4199,
       "height": 6298,
@@ -355,8 +354,7 @@
     },
     {
       "file": "IMG_6856",
-      "alt": "Freno Brembo",
-      "caption": "Frenos Brembo",
+      "alt": "Miles GT40 Brembo brake",
       "id": "img-6856",
       "width": 5464,
       "height": 8192,
@@ -370,8 +368,7 @@
     },
     {
       "file": "IMG_6842",
-      "alt": "Motor V8 central",
-      "caption": "V8 central",
+      "alt": "Miles GT40 mid-mounted V8 engine",
       "id": "img-6842",
       "width": 5318,
       "height": 7973,

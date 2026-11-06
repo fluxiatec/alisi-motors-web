@@ -8,8 +8,8 @@ export function WhatsAppFab() {
   const [inContact, setInContact] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById('inicio');
-    const contact = document.getElementById('contacto');
+    const hero = document.getElementById('top');
+    const contact = document.getElementById('contact');
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) {
         if (e.target === hero) setPastHero(!e.isIntersecting);
@@ -28,7 +28,7 @@ export function WhatsAppFab() {
       href={waLink(0)}
       target="_blank"
       rel="noopener"
-      aria-label="Consultar por WhatsApp"
+      aria-label="Contact us on WhatsApp"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
       className={`fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-cta text-white shadow-[0_8px_30px_rgb(0_0_0/.5)] transition-[opacity,transform] duration-300 active:scale-95 ${
