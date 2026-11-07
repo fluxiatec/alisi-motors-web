@@ -1,0 +1,44 @@
+# Alisi Motors · config para Plesk / Apache (equivalente a deploy/nginx.conf).
+# La redirección HTTP→HTTPS se activa desde Plesk (Hosting y DNS → "Redirección 301 de HTTP a HTTPS").
+
+DirectoryIndex index.html
+Options -Indexes
+
+# Tipos que algunos Apache no traen por defecto
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# Compresión de texto (imágenes y videos ya vienen comprimidos)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain application/javascript application/json image/svg+xml application/manifest+json
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml application/manifest+json
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # El HTML siempre se revalida para tomar el deploy nuevo
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # JS/CSS/fuentes con hash de Vite → 1 año, inmutable
+  <If "%{REQUEST_URI} =~ m#^/assets/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+  # Fotos y videos optimizados → 30 días (Apache sirve Range requests de fábrica)
+  <If "%{REQUEST_URI} =~ m#^/media/#">
+    Header set Cache-Control "public, max-age=2592000"
+  </If>
+  # Íconos, OG, fuente del wordmark → 7 días
+  <FilesMatch "\.(png|jpg|svg|ico|webmanifest|woff2)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
